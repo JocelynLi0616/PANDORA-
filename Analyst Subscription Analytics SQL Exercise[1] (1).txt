@@ -1,0 +1,36 @@
+Prompt: 
+Please provide the query that returns the count of listeners by product_type, feature_code and month.
+Please provide the query that returns the count of new subscribers that start paying each day.
+Please provide the query that returns the count of times a listener shows up as a new subscriber in the year. 
+
+CREATE TABLE listener_state_snapshot (
+    listener_id bigint
+    , product_type string
+    , feature_code string
+)
+PARTITIONED BY (day STRING)
+
+Assume:
+1. At the end of each day, the listener is recorded in only one product_type/feature_code
+2. The table has data between 2016-01-01 and 2016-12-31 (inclusive). 
+3. Assume that all trial_subscription listeners are NOT paying. i.e., are in a free trial
+4. All distinct product types and feature codes in the table are shown below 
+
+Sample output from the listener_state_snapshot table: 
+listener_id product_type feature_code day  
+123 subscription pandora_plus 2016-01-01
+345 trial_subscription pandora_plus 2016-01-01 
+678 registered ad_supported 2016-01-01
+1230 subscription pandora_premium 2016-01-01
+123 subscription pandora_plus 2016-01-02
+345 trial_subscription pandora_plus 2016-01-02
+678 trial_subscription pandora_plus 2016-01-02
+1230 subscription pandora_premium 2016-01-02
+123 registered ad_supported 2016-01-03
+345 trial_subscription pandora_plus 2016-01-03
+678 trial_subscription pandora_plus 2016-01-03
+1230 subscription pandora_premium 2016-01-03
+.
+. 
+.  
+

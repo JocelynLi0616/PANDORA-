@@ -1,0 +1,13 @@
+listener_id,product_type,feature_code,day
+123,subscription,pandora_plus,2016-01-01
+345,trial_subscription,pandora_plus,2016-01-01
+678,registered,ad_supported,2016-01-01
+1230,subscription,pandora_premium,2016-01-01
+123,subscription,pandora_plus,2016-01-02
+345,trial_subscription,pandora_plus,2016-01-02
+678,trial_subscription,pandora_plus,2016-01-02
+1230,subscription,pandora_premium,2016-01-02
+123,registered,ad_supported,2016-01-03
+345,trial_subscription,pandora_plus,2016-01-03
+678,trial_subscription,pandora_plus,2016-01-03
+1230,subscription,pandora_premium,2016-01-03
